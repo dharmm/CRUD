@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+    background: #eee;
+    height: 100%;
+    margin: 25px 0;
+    padding-left: 300px;
+}
+
+table,
+th,
+td {
+    border: 1px solid rgb(118, 200, 221);
+}
+
+tr:hover {
+    background-color: yellow;
+}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+button {
+    border-radius: 12px;
+    color: aqua;
+    background-color: #04AA6D;
+    cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+    <form method="POST" action="/emp/">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Enter Details</h3>
+            </p>
+            <div>
+                <p>Employee Id:</p>{{ form.eid }}
+            </div>
+            <div>
+                <p>Employee Name::</p>{{ form.ename }}
+            </div>
+            <div>
+                <p>Employee Email:</p>{{ form.eemail }}
+            </div>
+            <div>
+                <p>Employee contact:</p>{{ form.econtact }}
+            </div>
+            <div>
+                <br>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
